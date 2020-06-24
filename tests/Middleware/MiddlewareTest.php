@@ -2,11 +2,11 @@
 
 use Mockery as m;
 
-abstract class MiddlewareTest extends PHPUnit_Framework_TestCase
+abstract class MiddlewareTest extends \PHPUnit\Framework\TestCase
 {
 	public static $abortCode = null;
 
-	public static function setupBeforeClass()
+	public static function setupBeforeClass(): void
 	{
 		if (! function_exists('abort')) {
 		    /**
@@ -29,7 +29,7 @@ abstract class MiddlewareTest extends PHPUnit_Framework_TestCase
 		}
 	}
 
-	public function tearDown()
+	public function tearDown(): void
 	{
 		parent::tearDown();
 
